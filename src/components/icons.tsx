@@ -2,7 +2,7 @@ import AddIcon from './Icons/AddIcon';
 import FeedIcon from './Icons/FeedIcon';
 import HomeIcon from './Icons/HomeIcon';
 import NotificationsOutlinedIcon from './Icons/NotificationsOutlinedIcon';
-import MessageIcon from './Icons/ChatIcon';
+import MessageIcon from './Icons/MessageIcon';
 import ArrowLeftIcon from './Icons/ArrowLeftIcon';
 import ArrowRightIcon from './Icons/ArrowRightIcon';
 import ChevronUpIcon from './Icons/ChevronUpIcon';
@@ -68,6 +68,8 @@ import PasswordIcon from './Icons/PasswordIcon';
 import GoogleLiveIcon from './Icons/GoogleLiveIcon';
 import TwitterLiveIcon from './Icons/TwitterLiveIcon';
 import TelegramLiveIcon from './Icons/TelegramLiveIcon';
+import PairIcon from './Icons/PairIcon';
+import LogoutIcon from './Icons/LogoutIcon';
 
 const icons = {
 	wallet: WalletIcon,
@@ -140,7 +142,9 @@ const icons = {
 	password: PasswordIcon,
 	google: GoogleLiveIcon,
 	twitterlive: TwitterLiveIcon,
-	telegramlive: TelegramLiveIcon
+	telegramlive: TelegramLiveIcon,
+	pair: PairIcon,
+	logout: LogoutIcon
 };
 export type Icons = keyof typeof icons;
 export { icons };

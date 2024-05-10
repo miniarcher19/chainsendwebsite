@@ -105,7 +105,7 @@ function App() {
 							>
 								<Route path="/" element={<Navigate to="/login" replace />} />
 								<Route path="/home" element={<Home />} />
-								<Route path="/forum" element={<Forum />} />
+								{/* <Route path="/forum" element={<Forum />} />
 								<Route path="/forum/postindividual/:id" element={<PostIndividual />} />
 								<Route path="/wallet" element={<Wallet />} />
 								<Route
@@ -192,9 +192,9 @@ function App() {
 											<Settings />
 										</RequireOwner>
 									}
-								/>
+								/> */}
 							</Route>
-							<Route
+							{/* <Route
 								element={
 									<Providers>
 										<Layout isSidebarAlwaysClosed />
@@ -219,7 +219,7 @@ function App() {
 										</RequireUsername>
 									}
 								/>
-							</Route>
+							</Route> */}
 							<Route path="*" element={<Navigate to="/" replace />}></Route>
 						</Routes>
 					</Suspense>

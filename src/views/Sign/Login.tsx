@@ -4,7 +4,8 @@ import { PrimaryButton } from 'src/components/Button';
 import { Form } from 'src/components/Form';
 import { IconButton } from 'src/components/IconButton';
 import { InputField } from 'src/components/InputField';
-import { BlackTitle, ButtonMediumText, H2Title, H3Title, HeaderMedium, PreTitle } from 'src/components/Typography';
+import { BlackTitle, ButtonMediumText, H3Title, HeaderMedium, PreTitle } from 'src/components/Typography';
+import { Logo } from '../Logo';
 
 export const Login = () => {
 	return (
@@ -21,14 +22,7 @@ export const Login = () => {
 		>
 			<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
 				<Box sx={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
-					<Link
-						sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', gap: 1 }}
-						component={NavLink}
-						to="/"
-					>
-						<img src="logo.svg" width={30} alt="logo" />
-						<H2Title>ChainSend</H2Title>
-					</Link>
+					<Logo />
 					<Box
 						sx={{
 							display: 'flex',

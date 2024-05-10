@@ -3,7 +3,6 @@ import { IconButton } from 'src/components/IconButton';
 import { useEffect, useState } from 'react';
 import logoImg from 'src/assets/icons/logo-white.svg';
 import { MenuList } from './Menulist';
-import { SidebarCommunities } from './SidebarCommunities';
 import { Stack } from '@mui/system';
 import { useLocation } from 'react-router-dom';
 
@@ -45,7 +44,6 @@ export const SidebarDrawer = () => {
 				</Stack>
 				<Stack gap={4}>
 					<MenuList />
-					<SidebarCommunities />
 				</Stack>
 			</Drawer>
 		</>

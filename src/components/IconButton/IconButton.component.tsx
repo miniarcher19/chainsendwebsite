@@ -37,15 +37,13 @@ export const IconButton = ({
 					}}
 				/>
 			) : (
-				<Box sx={{ bgcolor: '#F3F4F6', padding: theme => theme.spacing(2, 2, 1.5, 2), borderRadius: 1 }}>
-					<Icon
-						icon={icon}
-						fontSize={size}
-						sx={{
-							...iconSx
-						}}
-					/>
-				</Box>
+				<Icon
+					icon={icon}
+					fontSize={size}
+					sx={{
+						...iconSx
+					}}
+				/>
 			)}
 			{label && (
 				<Paragraph3

@@ -47,7 +47,7 @@ const MenuButtonContainer = styled(Button, {
 	flexDirection: 'row',
 	justifyContent: 'flex-start',
 	alignItems: 'center',
-	padding: theme.spacing(1),
+	padding: theme.spacing(1, 2),
 	gap: theme.spacing(1),
 	minWidth: 'initial',
 	boxSizing: 'border-box',
@@ -59,15 +59,15 @@ const MenuButtonContainer = styled(Button, {
 		margin: 0,
 		opacity: isFocused ? 1 : 0.5
 	},
-	borderRadius: theme.spacing(1),
-	background: isFocused ? theme.palette.gradient2.main : null,
-	fontFamily: 'Clash Display',
+	borderRadius: theme.spacing(1.5),
+	background: isFocused ? theme.palette.gradient1.main : '#FFFFFF',
+	fontFamily: 'Exo',
 	fontStyle: 'normal',
-	fontWeight: 600,
-	fontSize: theme.spacing(1.75),
+	fontWeight: 500,
+	fontSize: theme.spacing(2),
 	textTransform: 'none',
 	whiteSpace: 'nowrap',
-	color: theme.palette.text.primary,
+	color: isFocused ? '#FFFFFF' : theme.palette.text.secondary,
 	'&:acive': {
 		background: theme.palette.gradient2.main
 	}
