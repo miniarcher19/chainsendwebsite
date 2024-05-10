@@ -72,24 +72,6 @@ export const HomePostList = () => {
 
 	return (
 		<Box sx={{ display: 'flex', gap: 2.25, flexDirection: 'column' }}>
-			<Box sx={{ display: 'flex', gap: 2.25, flexDirection: { xs: 'column', lg: 'row' } }}>
-				{isLoggedIn && (
-					<CustomToggleButtonGroup
-						sx={{ flexWrap: 'nowrap' }}
-						defaultValue={sortKey}
-						options={options}
-						onChange={value => handleSortKeyChange(value as PostSortKey)}
-					/>
-				)}
-				<StandaloneInputField
-					value={search}
-					boxSx={{ width: 'initial', flex: 1 }}
-					name="search"
-					placeholder="Search"
-					startIcon="search"
-					onChange={e => handleSearchKeyChange(e.target.value)}
-				/>
-			</Box>
 			<Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
 				{isError ? (
 					<ErrorMessage description="There was an error while loading" />

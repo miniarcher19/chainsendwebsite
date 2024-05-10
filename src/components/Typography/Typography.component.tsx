@@ -97,14 +97,7 @@ export const H3Title = ({ children, ...props }: PropsWithChildren<TypographyProp
 
 export const H4Title = ({ children, ...props }: PropsWithChildren<TypographyProps>) => {
 	return (
-		<Typography
-			color="text.primary"
-			variant="h4"
-			fontFamily="Clash Display"
-			fontStyle="normal"
-			lineHeight="130%"
-			{...props}
-		>
+		<Typography color="text.primary" variant="h4" fontFamily="Exo" fontStyle="normal" lineHeight="130%" {...props}>
 			{children}
 		</Typography>
 	);
@@ -233,14 +226,7 @@ export const ButtonSmallText = ({ children, ...props }: PropsWithChildren<Typogr
 
 export const Label = ({ children, ...props }: PropsWithChildren<TypographyProps>) => {
 	return (
-		<Typography
-			color="text.primary"
-			variant="label"
-			fontFamily="Clash Display"
-			fontStyle="normal"
-			lineHeight="140%"
-			{...props}
-		>
+		<Typography color="text.primary" variant="label" fontFamily="Exo" fontStyle="normal" lineHeight="140%" {...props}>
 			{children}
 		</Typography>
 	);

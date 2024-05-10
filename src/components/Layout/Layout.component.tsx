@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useDevice } from 'src/hooks/useDevice';
-import { Container, Stack } from '@mui/material';
+import { Box, Container, Stack } from '@mui/material';
 import { Main } from 'src/components/Layout/Container';
-import { BottomNavigationBar } from 'src/components/Layout/Sidebar';
+import { BottomNavigationBar, RightSidebar } from 'src/components/Layout/Sidebar';
 import { AuthContext, ChatContext } from 'src/contexts';
 import { Xmpp } from 'src/api/xmpp';
 import { useBlockList } from 'src/hooks/useBlockedList';
@@ -25,6 +25,7 @@ import { lastestRoomMessagesState } from 'src/recoil/lastestRoomMessage';
 import { UsernameDialog } from '../UsernameDialog';
 import { GradientIcon } from '../Icons/GradientIcon';
 import { SidebarMenu } from './Sidebar/SidebarMenu';
+import { borderBottom } from '@mui/system';
 
 export const Layout = ({ isSidebarAlwaysClosed = false }: { isSidebarAlwaysClosed?: boolean }) => {
 	const { pathname } = useLocation();
@@ -261,18 +262,27 @@ export const Layout = ({ isSidebarAlwaysClosed = false }: { isSidebarAlwaysClose
 			{iMid && isChat && activeJid ? null : iMid && <BottomNavigationBar />}
 			<Main>
 				{!iMid && <SidebarMenu isSidebarAlwaysClosed={isSidebarAlwaysClosed} />}
-				<Container
+				<Box
 					sx={{
 						overflowY: 'auto',
+						width: '100%',
 						maxHeight: '100vh',
-						paddingY: theme => theme.spacing(8)
+						bgcolor: '#F9F7FC'
 					}}
-					maxWidth={false}
 				>
+					<Box
+						sx={{
+							position: 'fixed',
+							width: '100%',
+							height: theme => theme.spacing(6),
+							bgcolor: '#FFFFFF',
+							zIndex: 10
+						}}
+					></Box>
 					<Outlet />
-				</Container>
+				</Box>
+				{!iMid && <RightSidebar />}
 			</Main>
-
 			<GradientIcon />
 		</Stack>
 	);

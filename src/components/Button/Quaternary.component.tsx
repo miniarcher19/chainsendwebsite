@@ -71,7 +71,7 @@ const QuaternaryButtonContainer = styled(Button)(({ theme }) => ({
 	fontSize: theme.spacing(1.25),
 	letterSpacing: '0.15em',
 	textTransform: 'none',
-	color: theme.palette.text.primary,
+	color: theme.palette.text.secondary,
 	'& .MuiButton-startIcon': {
 		margin: 0
 	},

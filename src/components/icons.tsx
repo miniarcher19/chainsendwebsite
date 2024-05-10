@@ -70,6 +70,11 @@ import TwitterLiveIcon from './Icons/TwitterLiveIcon';
 import TelegramLiveIcon from './Icons/TelegramLiveIcon';
 import PairIcon from './Icons/PairIcon';
 import LogoutIcon from './Icons/LogoutIcon';
+import CoinIcon from './Icons/CoinIcon';
+import VideoIcon from './Icons/VideoIcon';
+import CommentIcon from './Icons/CommentIcon';
+import LikeIcon from './Icons/LikeIcon';
+import RepeatIcon from './Icons/RepeatIcon';
 
 const icons = {
 	wallet: WalletIcon,
@@ -144,7 +149,12 @@ const icons = {
 	twitterlive: TwitterLiveIcon,
 	telegramlive: TelegramLiveIcon,
 	pair: PairIcon,
-	logout: LogoutIcon
+	logout: LogoutIcon,
+	coin: CoinIcon,
+	video: VideoIcon,
+	comment: CommentIcon,
+	like: LikeIcon,
+	repeat: RepeatIcon
 };
 export type Icons = keyof typeof icons;
 export { icons };

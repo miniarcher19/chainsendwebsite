@@ -6,17 +6,12 @@ export const Main = ({ children }: PropsWithChildren) => {
 	return (
 		<Box
 			component="main"
-			sx={theme => ({
-				display: 'grid',
+			sx={{
+				display: 'flex',
 				width: '100vw',
 				height: '100vh',
-				backgroundColor: 'white',
-				gridTemplateColumns: 'auto minmax(100px,1fr)',
-				[theme.breakpoints.down('lg')]: {
-					display: 'flex',
-					maxHeight: 'initial'
-				}
-			})}
+				backgroundColor: 'white'
+			}}
 		>
 			{children}
 		</Box>

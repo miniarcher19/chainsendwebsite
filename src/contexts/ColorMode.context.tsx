@@ -577,7 +577,7 @@ const FRONT_COLORS_LIGHT: Readonly<PaletteOptions> = {
 		main: '#E5D9FF'
 	},
 	border: {
-		subtle: '#FFFFFF26',
+		subtle: '#F2F4F7',
 		default: '#FFFFFF4D',
 		highlight: '#FFFFFF73'
 	}

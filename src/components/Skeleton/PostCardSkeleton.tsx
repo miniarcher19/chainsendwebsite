@@ -39,6 +39,6 @@ const PostCardSkeletonContainer = styled(Box)(({ theme }) => ({
 	flexDirection: 'column',
 	gap: theme.spacing(2),
 	padding: theme.spacing(4),
-	background: theme.palette.dark[700],
+	background: '#FFFFFF',
 	borderRadius: theme.spacing(1.5)
 }));

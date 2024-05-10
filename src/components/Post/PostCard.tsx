@@ -2,12 +2,10 @@ import { useState, useContext, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Box, Collapse, Link, Skeleton, Stack } from '@mui/material';
 import { toast } from 'react-toastify';
-import pluralize from 'pluralize';
-import { CAvatar, LargeAvatar, SmallAvatar } from 'src/components/Avatar';
-import { OutlineButton } from 'src/components/Button';
+import { LargeAvatar, SmallAvatar } from 'src/components/Avatar';
 import { IconButton } from 'src/components/IconButton';
 import { InputField } from 'src/components/InputField';
-import { H4Title, Paragraph2, CTitle, Label } from 'src/components/Typography';
+import { H4Title, Paragraph2, Label, PreTitle } from 'src/components/Typography';
 import { IPost, AuthContext } from 'src/contexts';
 import { Comment } from './Comment';
 import { Form } from 'src/components/Form';
@@ -17,7 +15,6 @@ import { differenceDate } from 'src/helpers/date.helpers';
 import { createCommentSchema } from 'src/schemas/create-comment.schema';
 import { ipfsUrl } from 'src/helpers/ipfs.helpers';
 import { avatarUrl } from 'src/constants/images.constants';
-import ShareBox from 'src/components/ShareBox';
 import { useCustomSWR } from 'src/hooks/useCustomSWR';
 import { useDevice } from 'src/hooks/useDevice';
 import { ErrorHandler } from 'src/helpers';
@@ -51,10 +48,6 @@ export const PostCard = ({
 
 	const forum = forums?.find(forum => forum.idx === post.communityIdx);
 	const { createComment, vote } = useGilder();
-
-	const handleComments = () => {
-		onCommentToggle?.(isShowExpandableSection ? '' : post.idx);
-	};
 
 	useEffect(() => {
 		setIsShowExpandableSection(openedCommentIndex === post.idx);
@@ -98,7 +91,7 @@ export const PostCard = ({
 				display: 'flex',
 				flexDirection: 'column',
 				padding: theme.spacing(4),
-				background: theme.palette.dark[700],
+				background: '#FFFFFF',
 				borderRadius: 1.5
 			})}
 		>
@@ -125,9 +118,6 @@ export const PostCard = ({
 						}
 					})}
 				>
-					<OutlineButton startIcon="arrowUp" onClick={() => votePost(Number(post.idx))} loading={isVoteSubmitting}>
-						{post.vote} {pluralize('vote', Number(post.vote))}
-					</OutlineButton>
 					{isShowForum &&
 						(isLoading ? (
 							<Stack direction="row" alignItems="center" spacing={1}>
@@ -135,14 +125,17 @@ export const PostCard = ({
 								<Skeleton variant="text" height={20} width={100} />
 							</Stack>
 						) : (
-							<Box display="flex" gap={2} overflow="hidden">
+							<Box display="flex" alignItems="center" gap={2} overflow="hidden">
 								<Link
 									component={NavLink}
-									to={`/forum/communityindividual/${post.communityIdx}`}
+									to="/home"
 									sx={{ overflow: 'hidden', display: 'flex', alignItems: 'center', gap: 1 }}
 								>
-									<ForumAvatar image={ipfsUrl(forum?.avatar.some.url || avatarUrl)} />
-									<Label noWrap>{forum?.title}</Label>
+									<LargeAvatar image="profile.png" />
+									<Box display="flex" flexDirection="column">
+										<Label noWrap>Junaid Mohamed</Label>
+										<PreTitle>@junaidx7</PreTitle>
+									</Box>
 								</Link>
 								{iMd && isEditBtnShown && <IconButton icon="edit" onClick={() => setIsEditPostModalShown(true)} />}
 							</Box>
@@ -150,12 +143,8 @@ export const PostCard = ({
 				</Box>
 				<Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, overflow: 'hidden' }}>
 					<Paragraph2 color="text.secondary" whiteSpace="nowrap">
-						Posted by
+						Posted at
 					</Paragraph2>
-					<Box sx={{ display: 'flex', alignItems: 'center', gap: 1, overflow: 'hidden' }}>
-						<CAvatar address={post.creatorInfo} />
-						<CTitle address={post.creatorInfo} />
-					</Box>
 					<Paragraph2
 						whiteSpace="nowrap"
 						color="text.secondary"
@@ -170,32 +159,24 @@ export const PostCard = ({
 					{!iMd && isEditBtnShown && <IconButton icon="edit" onClick={() => setIsEditPostModalShown(true)} />}
 				</Box>
 			</Box>
-			<Link component={NavLink} to={`/forum/postindividual/${post.idx}`}>
-				<H4Title sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }} title={post.title}>
-					{post.title}
-				</H4Title>
+			<Link component={NavLink} to="/home">
+				<H4Title sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>Lorem ipsum</H4Title>
 
-				<PrimaryEditor readOnly readContent={post.message} post={post} />
+				<PrimaryEditor
+					readOnly
+					readContent="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ultricies ligula, ut pellentesque tellus. Integer vitae aliquet nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in porttitor leo. Sed efficitur ipsum mollis tincidunt cursus. Integer rutrum nunc quis turpis ullamcorper egestas. Fusce sit amet arcu nunc. Pellentesque pulvinar egestas purus. Vestibulum pharetra massa at orci imperdiet venenatis in in turpis. Donec iaculis dui at semper pellentesque. Quisque ut luctus orci. Vestibulum id facilisis sapien.
+
+Quisque nibh nulla, tincidunt nec neque ut, efficitur tristique lorem. Ut eu faucibus ante, vel pharetra nulla. Proin id tristique tortor. Praesent ut finibus urna, at semper elit. Donec rhoncus blandit dolor id ullamcorper. In et blandit est, id tristique quam. Aliquam convallis eleifend nisl et suscipit. Pellentesque ante nisi, interdum vel ullamcorper tristique, tristique non tellus. Proin quis massa sed massa vulputate ullamcorper. Aenean faucibus placerat nulla, sit amet viverra ante tincidunt nec. Aliquam rhoncus, sapien quis accumsan interdum, elit ex suscipit orci, at pharetra urna ante faucibus enim. Sed vitae odio efficitur, laoreet augue et, ultricies sem.
+
+Nunc nec hendrerit odio. Phasellus orci enim, porttitor nec justo in, mattis porttitor dui. Sed sodales ac nisl a pretium. Aenean placerat sapien accumsan, elementum mi ut, dignissim leo. Aenean mi lacus, egestas vitae convallis ullamcorper, egestas sed nulla. Aliquam consectetur massa sapien. Cras et eleifend nibh. Donec porta ornare nisi"
+					post={post}
+				/>
 			</Link>
 
-			<Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mt: 2.5 }}>
-				<IconButton
-					icon="message"
-					size="extraSmall"
-					onClick={handleComments}
-					label={`${post.comments?.length} ${pluralize('comment', post.comments?.length)}`}
-				/>
-
-				<ShareBox
-					label="Share"
-					links={[
-						{
-							title: 'Copy URL',
-							href: `${window.location.origin}/forum/postindividual/${post.idx}`,
-							icon: 'link'
-						}
-					]}
-				/>
+			<Box sx={{ display: 'flex', alignItems: 'center', gap: 5, mt: 2.5 }}>
+				<IconButton icon="comment" size="medium" label="122" />
+				<IconButton icon="like" size="medium" label="238" />
+				<IconButton icon="repeat" size="medium" label="425" />
 			</Box>
 
 			<Collapse in={isShowExpandableSection}>

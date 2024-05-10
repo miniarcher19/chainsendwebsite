@@ -18,7 +18,7 @@ export const SidebarMenu = ({ isSidebarAlwaysClosed = false }: { isSidebarAlways
 		<Stack
 			sx={theme => ({
 				padding: theme.spacing(5, 3, 3, 3),
-				width: isMenuOpened ? '300px' : '84px',
+				width: isMenuOpened ? '350px' : '84px',
 				flexDirection: 'column',
 				justifyContent: 'space-between',
 				transition: 'width 0.2s ease',

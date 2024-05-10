@@ -47,7 +47,7 @@ const MenuButtonContainer = styled(Button, {
 	flexDirection: 'row',
 	justifyContent: 'flex-start',
 	alignItems: 'center',
-	padding: theme.spacing(1, 2),
+	padding: theme.spacing(1),
 	gap: theme.spacing(1),
 	minWidth: 'initial',
 	boxSizing: 'border-box',

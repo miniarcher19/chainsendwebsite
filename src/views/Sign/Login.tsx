@@ -4,7 +4,7 @@ import { PrimaryButton } from 'src/components/Button';
 import { Form } from 'src/components/Form';
 import { IconButton } from 'src/components/IconButton';
 import { InputField } from 'src/components/InputField';
-import { BlackTitle, ButtonMediumText, H3Title, HeaderMedium, PreTitle } from 'src/components/Typography';
+import { BlackTitle, ButtonMediumText, H3Title, HeaderMedium, HeaderSmall, PreTitle } from 'src/components/Typography';
 import { Logo } from '../Logo';
 
 export const Login = () => {
@@ -32,14 +32,10 @@ export const Login = () => {
 							alignItems: 'center'
 						}}
 					>
-						<HeaderMedium sx={{ color: '#776A92' }}>
-							Don't wait for the rug pull to know its a scam.&nbsp;
-							<span
-								style={{ textDecoration: 'underline', textDecorationColor: '#F1C357', textDecorationThickness: '10px' }}
-							>
-								know before
-							</span>
-						</HeaderMedium>
+						<HeaderSmall sx={{ color: '#776A92' }}>
+							ChainSend offers a user-friendly platform where users can interact, create content, and earn rewards
+							effortlessly.
+						</HeaderSmall>
 					</Box>
 				</Box>
 				<Box
