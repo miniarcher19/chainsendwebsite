@@ -14,6 +14,10 @@ import { CircularProgress } from './components/Progress';
 const Layout = lazy(() => import('src/components/Layout').then(module => ({ default: module.Layout })));
 const Login = lazy(() => import('src/views/Sign/Login').then(module => ({ default: module.Login })));
 const Home = lazy(() => import('src/views/Home').then(module => ({ default: module.Home })));
+const UserProfile = lazy(() =>
+	import('src/views/Home/components/UserProfile').then(module => ({ default: module.UserProfile }))
+);
+
 const Settings = lazy(() => import('src/views/Settings').then(module => ({ default: module.Settings })));
 const Forum = lazy(() => import('src/views/Forum').then(module => ({ default: module.Forum })));
 const CommunityIndividual = lazy(() =>
@@ -27,7 +31,7 @@ const Terms = lazy(() => import('src/views/About/Terms').then(module => ({ defau
 const Privacy = lazy(() => import('src/views/About/Privacy').then(module => ({ default: module.Privacy })));
 const Conduct = lazy(() => import('src/views/About/Conduct').then(module => ({ default: module.Conduct })));
 const Notifications = lazy(() => import('src/views/Notifications').then(module => ({ default: module.Notifications })));
-const Profile = lazy(() => import('src/views/Profile').then(module => ({ default: module.Profile })));
+// const Profile = lazy(() => import('src/views/Profile').then(module => ({ default: module.Profile })));
 const PostIndividual = lazy(() =>
 	import('src/views/Forum/components/PostIndividual').then(module => ({ default: module.PostIndividual }))
 );
@@ -105,6 +109,7 @@ function App() {
 							>
 								<Route path="/" element={<Navigate to="/login" replace />} />
 								<Route path="/home" element={<Home />} />
+								<Route path="/profile" element={<UserProfile />} />
 								{/* <Route path="/forum" element={<Forum />} />
 								<Route path="/forum/postindividual/:id" element={<PostIndividual />} />
 								<Route path="/wallet" element={<Wallet />} />

@@ -75,6 +75,7 @@ import VideoIcon from './Icons/VideoIcon';
 import CommentIcon from './Icons/CommentIcon';
 import LikeIcon from './Icons/LikeIcon';
 import RepeatIcon from './Icons/RepeatIcon';
+import GrayCoinIcon from './Icons/GrayCoinIcon';
 
 const icons = {
 	wallet: WalletIcon,
@@ -154,7 +155,8 @@ const icons = {
 	video: VideoIcon,
 	comment: CommentIcon,
 	like: LikeIcon,
-	repeat: RepeatIcon
+	repeat: RepeatIcon,
+	graycoin: GrayCoinIcon
 };
 export type Icons = keyof typeof icons;
 export { icons };

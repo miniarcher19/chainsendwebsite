@@ -43,8 +43,7 @@ export const AccAvatar = ({ image, ...props }: IAvatarProps) => {
 			sx={{
 				...props.sx,
 				width: theme => theme.spacing(8),
-				height: theme => theme.spacing(8),
-				border: `${theme.spacing(0.25)} solid ${theme.palette.primary[900]}`
+				height: theme => theme.spacing(8)
 			}}
 		/>
 	);

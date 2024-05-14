@@ -14,13 +14,12 @@ export const Home = () => {
 				sx={{
 					mt: 6,
 					py: { xs: 2.5, lg: 5 },
-					px: { xs: 5 },
+					px: { xs: 5, lg: 10 },
 					gap: { xs: 5, lg: 4 },
 					display: 'flex',
 					overflowY: 'auto',
 					flexDirection: 'column',
 					width: '100%',
-					maxWidth: { xs: 'none', lg: '704px' },
 					mx: 'auto'
 				}}
 			>
