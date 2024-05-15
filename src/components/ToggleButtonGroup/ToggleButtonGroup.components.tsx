@@ -91,14 +91,14 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 		alignItems: 'center',
 		padding: theme.spacing(0.875, 1.5),
 		gap: theme.spacing(1),
-		border: `${theme.spacing(0.125)} solid ${theme.palette.border.default}`,
-		fontFamily: 'Clash Display',
+		border: `${theme.spacing(0.125)} solid ${theme.palette.text.secondary}`,
+		fontFamily: 'Exo',
 		fontStyle: 'normal',
-		fontWeight: 600,
+		fontWeight: 500,
 		fontSize: theme.spacing(1.75),
 		textTransform: 'none',
 		whiteSpace: 'nowrap',
-		color: theme.palette.text.primary,
+		color: theme.palette.text.secondary,
 		lineHeight: theme.spacing(3),
 		'& .MuiSvgIcon-root': {
 			color: theme.palette.border.highlight
@@ -109,23 +109,21 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 			opacity: 0.5
 		},
 		'&:not(:first-of-type)': {
-			border: `${theme.spacing(0.125)} solid ${theme.palette.border.default}`,
+			border: `${theme.spacing(0.125)} solid ${theme.palette.text.secondary}`,
 			borderRadius: theme.spacing(1),
 			marginLeft: 0
 		},
 		'&:first-of-type': {
-			border: `${theme.spacing(0.125)} solid ${theme.palette.border.default}`,
+			border: `${theme.spacing(0.125)} solid ${theme.palette.text.secondary}`,
 			borderRadius: theme.spacing(1)
 		},
 		'&.Mui-selected': {
-			background: theme.palette.gradient2.main,
-			border: 'none',
+			backgroundColor: '#FFFFFF',
+			border: `${theme.spacing(0.125)} solid #6359E9`,
+			color: '#6359E9',
 			'& .MuiSvgIcon-root': {
-				color: theme.palette.text.primary
+				color: '#FFFFFF'
 			}
-		},
-		'&:hover': {
-			backgroundColor: theme.palette.dark[500]
 		},
 		'& .toogle-button-group__label': {
 			textOverflow: 'ellipsis',

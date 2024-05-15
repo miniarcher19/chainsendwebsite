@@ -17,6 +17,7 @@ const Home = lazy(() => import('src/views/Home').then(module => ({ default: modu
 const UserProfile = lazy(() =>
 	import('src/views/Home/components/UserProfile').then(module => ({ default: module.UserProfile }))
 );
+const People = lazy(() => import('src/views/People').then(module => ({ default: module.People })));
 
 const Settings = lazy(() => import('src/views/Settings').then(module => ({ default: module.Settings })));
 const Forum = lazy(() => import('src/views/Forum').then(module => ({ default: module.Forum })));
@@ -110,6 +111,7 @@ function App() {
 								<Route path="/" element={<Navigate to="/login" replace />} />
 								<Route path="/home" element={<Home />} />
 								<Route path="/profile" element={<UserProfile />} />
+								<Route path="/people" element={<People />} />
 								{/* <Route path="/forum" element={<Forum />} />
 								<Route path="/forum/postindividual/:id" element={<PostIndividual />} />
 								<Route path="/wallet" element={<Wallet />} />

@@ -13,8 +13,8 @@ export const UserProfile = () => {
 		<Box sx={{ width: '100%', height: '100vh' }}>
 			<Box
 				sx={{
-					mt: 6,
-					py: { xs: 2.5, lg: 5 },
+					pt: { xs: 8.5, lg: 11 },
+					pb: { xs: 2.5, lg: 5 },
 					px: { xs: 5, lg: 10 },
 					gap: { xs: 5, lg: 4 },
 					display: 'flex',
