@@ -125,6 +125,9 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 				color: '#FFFFFF'
 			}
 		},
+		'&:hover': {
+			backgroundColor: 'transparent'
+		},
 		'& .toogle-button-group__label': {
 			textOverflow: 'ellipsis',
 			overflow: 'hidden'
