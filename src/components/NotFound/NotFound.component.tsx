@@ -11,7 +11,7 @@ export const NotFound = ({ title = '', description = '', iconProps, isSmall = fa
 
 	return (
 		<Stack spacing={3} alignItems="center" {...rest}>
-			<NoDataIcon
+			{/* <NoDataIcon
 				{...iconProps}
 				sx={{
 					width: theme => (isSmall ? theme.spacing(19.75) : theme.spacing(27.5)),
@@ -19,7 +19,7 @@ export const NotFound = ({ title = '', description = '', iconProps, isSmall = fa
 					color: theme => theme.palette.dark[700],
 					...iconProps?.sx
 				}}
-			/>
+			/> */}
 			<Stack sx={{ gap: 0.5, alignItems: 'center' }}>
 				<Title textAlign="center">{title}</Title>
 				<Description textAlign="center" color="text.secondary">
